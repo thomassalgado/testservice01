@@ -5,7 +5,7 @@ import "strconv"
 import "strings"
 import "github.com/gin-gonic/gin"
 
-func main() {
+func setupRouter() *gin.Engine {
 	r := gin.Default()
 	r.GET("/numbers", func(c *gin.Context) {
 
@@ -24,8 +24,14 @@ func main() {
 			})
 		}
 	})
-	r.Run()
+	return r
 }
+
+func main() {
+	r := setupRouter()
+	r.Run(":8080")
+}
+
 
 func processNumbers(beginStr string, endStr string) (string, error) {
 
@@ -55,10 +61,10 @@ func processNumbers(beginStr string, endStr string) (string, error) {
 
 		for i := begin; i <= end; i++ {
 			tmpStr := ""
-			if i % 3 == 0 && i > 0{
+			if i % 3 == 0 && i > 0 {
 				tmpStr += "Pé"
 			}
-			if i % 5 == 0  && i > 0{
+			if i % 5 == 0  && i > 0 {
 				tmpStr += "Do"
 			}
 			if tmpStr == "" {
