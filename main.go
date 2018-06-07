@@ -9,7 +9,7 @@ func setupRouter() *gin.Engine {
 	r := gin.Default()
 	r.GET("/numbers", func(c *gin.Context) {
 
-		begin := c.DefaultQuery("begin", "0")
+		begin := c.DefaultQuery("begin", "1")
 		end := c.DefaultQuery("end", "100")
 
 		message, err := processNumbers(begin, end)
@@ -47,8 +47,8 @@ func processNumbers(beginStr string, endStr string) (string, error) {
 			return message, errors.New("invalid end value")
 		}
 
-		if begin < 0 || end < 0 {
-			return message, errors.New("parameters must be unsigned")
+		if begin < 1 || end < 1 {
+			return message, errors.New("parameters must be unsigned and greater than 0")
 		}
 
 		if begin > end {
@@ -61,10 +61,10 @@ func processNumbers(beginStr string, endStr string) (string, error) {
 
 		for i := begin; i <= end; i++ {
 			tmpStr := ""
-			if i % 3 == 0 && i > 0 {
+			if i % 3 == 0 {
 				tmpStr += "Pé"
 			}
-			if i % 5 == 0  && i > 0 {
+			if i % 5 == 0 {
 				tmpStr += "Do"
 			}
 			if tmpStr == "" {

@@ -13,7 +13,7 @@ var errorMessages = []struct {
 }{
 	{"A", "100", "invalid begin value"},
   {"0", "A", "invalid end value"},
-  {"-10", "100", "parameters must be unsigned"},
+  {"-10", "100", "parameters must be unsigned and greater than 0"},
   {"90", "10", "begin must be lower than end"},
   {"105", "110", "parameters must be lower than 100"},
 }

@@ -18,7 +18,7 @@ or passing:
 begin: the first number of the sequence
 end: the last number of the sequence
 
-By default, the values of begin and end are 0 and 100 so there is no need to pass
+By default, the values of begin and end are 1 and 100 so there is no need to pass
 both parameters
 
 The return will be a JSON with the sequence of numbers between begin and end, fallowing the rule:
