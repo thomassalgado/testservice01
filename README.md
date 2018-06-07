@@ -34,5 +34,5 @@ Begin and end parameters must be unsigned integers lower than 100
 
 ## Errors
 
-If invalid parameters were passed, the server will return a JSON with a errro error message
+If invalid parameters were passed, the server will return a JSON with an error message
 and a 400 http status
