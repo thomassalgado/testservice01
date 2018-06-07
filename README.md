@@ -28,7 +28,7 @@ For multiples of 5, print the word 'Do' instead of the number.
 For multiples of both 3 and 5, print 'PéDo'.
 Else print the number itself
 
-##Constraints
+## Constraints
 
 Begin and end parameters must be unsigned integers lower than 100
 
